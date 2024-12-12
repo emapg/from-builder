@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PlusCircle, Palette, Eye, Template } from 'lucide-react';
 import { useFormBuilder } from '../hooks/useFormBuilder';
-import FieldList from './form/FieldList';
+import FieldList from './FieldList';
 import FormPreview from './form/FormPreview';
 import ThemeCustomizer from './form/ThemeCustomizer';
 import TemplateGallery from './form/TemplateGallery';
