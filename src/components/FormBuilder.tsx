@@ -3,7 +3,7 @@ import { PlusCircle, Palette, Eye, Template } from 'lucide-react';
 import { useFormBuilder } from '../hooks/useFormBuilder';
 import FieldList from './FieldList';
 import FormPreview from './FormPreview';
-import ThemeCustomizer from './form/ThemeCustomizer';
+import ThemeCustomizer from '/ThemeCustomizer';
 import TemplateGallery from './form/TemplateGallery';
 import PageManager from './PageManager';
 import Toast from './ui/Toast';
