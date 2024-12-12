@@ -3,7 +3,6 @@ import { PlusCircle, Palette, Eye, Template } from 'lucide-react';
 import { useFormBuilder } from '../hooks/useFormBuilder';
 import FieldList from './FieldList';
 import FormPreview from './FormPreview';
-import ThemeCustomizer from '/ThemeCustomizer';
 import TemplateGallery from './TemplateGallery';
 import PageManager from './PageManager';
 import Toast from './ui/Toast';
@@ -12,10 +11,8 @@ import TabButton from './ui/TabButton';
 export default function FormBuilder() {
   const {
     fields,
-    theme,
     currentPage,
     setFields,
-    setTheme,
     setCurrentPage,
     addField,
     removeField,
@@ -24,7 +21,7 @@ export default function FormBuilder() {
     loadTemplate,
   } = useFormBuilder();
 
-  const [activeTab, setActiveTab] = useState<'fields' | 'preview' | 'theme' | 'templates'>('fields');
+  const [activeTab, setActiveTab] = useState<'fields' | 'preview' | 'templates'>('fields');
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' | 'info' } | null>(null);
 
   const showToast = (message: string, type: 'success' | 'error' | 'info' = 'info') => {
@@ -46,12 +43,6 @@ export default function FormBuilder() {
             label="Preview"
             active={activeTab === 'preview'}
             onClick={() => setActiveTab('preview')}
-          />
-          <TabButton
-            icon={<Palette size={20} />}
-            label="Theme"
-            active={activeTab === 'theme'}
-            onClick={() => setActiveTab('theme')}
           />
           <TabButton
             icon={<Template size={20} />}
@@ -81,10 +72,7 @@ export default function FormBuilder() {
             </>
           )}
           {activeTab === 'preview' && (
-            <FormPreview fields={fields} theme={theme} />
-          )}
-          {activeTab === 'theme' && (
-            <ThemeCustomizer theme={theme} setTheme={setTheme} />
+            <FormPreview fields={fields} />
           )}
           {activeTab === 'templates' && (
             <TemplateGallery onSelectTemplate={loadTemplate} />
