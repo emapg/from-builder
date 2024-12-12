@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { PlusCircle, Palette, Eye, Template } from 'lucide-react';
 import { useFormBuilder } from '../hooks/useFormBuilder';
 import FieldList from './FieldList';
-import FormPreview from './form/FormPreview';
+import FormPreview from './FormPreview';
 import ThemeCustomizer from './form/ThemeCustomizer';
 import TemplateGallery from './form/TemplateGallery';
-import PageManager from './form/PageManager';
+import PageManager from './PageManager';
 import Toast from './ui/Toast';
 import TabButton from './ui/TabButton';
 
